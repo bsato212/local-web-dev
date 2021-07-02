@@ -1,0 +1,23 @@
+function reqListener() {
+    console.log("Unparsed: " + this.responseText);
+}
+
+// Trigger GET request
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "https://aws.random.cat/meow");
+oReq.send();
+
+// Log and parse URL from body of response
+oReq.onload = function() {
+    const jsonbody = JSON.parse(oReq.responseText);
+    console.log(jsonbody);
+    var link = jsonbody.file;
+
+    // Create and put image on page
+    var image = document.createElement("img");
+    image.id = "image";
+    image.src = link;
+    var p = document.getElementById("line");
+    p.parentNode.insertBefore(image, p.nextSibling);
+}

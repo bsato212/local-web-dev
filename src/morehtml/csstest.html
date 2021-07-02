@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Evan's CSS Test</title>
+  <link rel="stylesheet" href="csstest.css">
+</head>
+<body>
+    <h1>CSS Test Page</h1>
+    <p class="flip" id="flip" onclick="myFunction()">Click to show panel</p>
+
+    <div id="panel">
+    <p>This panel contains a div element, which is hidden by default (display: none).</p>
+    <p>It is styled with CSS and we use JavaScript to show it (display: block).</p>
+    <p>How it works: Notice that the p element with class="flip" has an onclick attribute attached to it. When the user clicks on the p element, a function called myFunction() is executed, which changes the style of the div with id="panel" from display:none (hidden) to display:block (visible).</p>
+    <p>You will learn more about JavaScript in our JavaScript Tutorial.</p>
+    </div>
+
+    <script>
+        function myFunction() {
+            document.getElementById("panel").style.display = "block";
+            document.getElementById("flip").textContent = "Click to hide panel";
+            document.getElementById("flip").onclick(myFunction2());
+        }
+        function myFunction2() {
+          document.getElementById("panel").style.display = "none";
+          document.getElementById("flip").textContent = "Click to show panel";
+          document.getElementById("flip").onclick(myFunction());
+        }
+    </script>
+  <p><a href="../index.html" target="_self" title="Go back to main page">To main page</a></p>
+  <script src="../index.js"></script>
+</body>
+</html>
