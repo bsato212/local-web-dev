@@ -1,0 +1,24 @@
+h1 {
+    font-family:fantasy;
+}
+
+#one {
+    background-color:lightcoral;
+    border: 2px solid lightskyblue;
+    margin: 5px;
+}
+
+#one {
+    display: none;
+}
+
+.divp {
+    color: black;
+    font-size: 32px;
+    text-align: center;
+}
+
+#time {
+    font-size: 40px;
+    color: red;
+}
