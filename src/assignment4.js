@@ -8,7 +8,7 @@ oReq.addEventListener("load", reqListener);
 oReq.open("GET", "https://aws.random.cat/meow");
 oReq.send();
 
-// Log and parse URL from body of response
+// Parse and log response body
 oReq.onload = function() {
     const jsonbody = JSON.parse(oReq.responseText);
     console.log(jsonbody);
