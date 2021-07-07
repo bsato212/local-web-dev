@@ -22,6 +22,7 @@ oReq.onload = function() {
         // Create and put image on page
         var image = document.createElement("img");
         image.src = link;
+        image.className = "picsum";
         var container = document.getElementById("container");
         container.appendChild(image);
     }

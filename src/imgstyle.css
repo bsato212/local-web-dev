@@ -2,7 +2,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
-img {
-    width: 30%;
-    height: auto;
+.cat {
+    width: 250px;
+    height: 250px;
+}
+
+.picsum {
+  width: 30%;
+  height: auto;
 }
