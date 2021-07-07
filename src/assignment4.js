@@ -10,6 +10,10 @@ oReq.send();
 
 // Parse and log response body
 oReq.onload = function() {
+    if(oReq.status !== 200 || !oReq.responseText) {
+        alert("Error");
+        return;
+    }
     const jsonbody = JSON.parse(oReq.responseText);
     console.log(jsonbody);
     var link = jsonbody.file;
