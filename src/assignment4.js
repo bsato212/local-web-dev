@@ -20,7 +20,7 @@ oReq.onload = function() {
 
     // Create and put image on page
     var image = document.createElement("img");
-    image.id = "image";
+    image.className = "cat";
     image.src = link;
     var p = document.getElementById("line");
     p.parentNode.insertBefore(image, p.nextSibling);

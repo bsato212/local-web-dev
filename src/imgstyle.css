@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.cat {
+    width: 300px;
+    height: 300px;
+    padding-right: 5px;
+}
+
+.picsum {
+  width: 30%;
+  height: auto;
+  padding-right: 5px;
+}
