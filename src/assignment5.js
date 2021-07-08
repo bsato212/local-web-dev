@@ -3,7 +3,7 @@ function reqListener() {
 }
 
 // Trigger GET request
-var oReq = new XMLHttpRequest();
+const oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
 oReq.open("GET", "https://picsum.photos/v2/list?limit=3");
 oReq.send();
@@ -16,14 +16,14 @@ oReq.onload = function() {
     }
     const jsonbody = JSON.parse(oReq.responseText);
     console.log(jsonbody);
-    for(var i = 0; i < jsonbody.length; i++) {
-        var link = jsonbody[i].download_url;
+    for(let i = 0; i < jsonbody.length; i++) {
+        const link = jsonbody[i].download_url;
 
         // Create and put image on page
-        var image = document.createElement("img");
+        const image = document.createElement("img");
         image.src = link;
         image.className = "picsum";
-        var container = document.getElementById("container");
+        const container = document.getElementById("container");
         container.appendChild(image);
     }
 }
