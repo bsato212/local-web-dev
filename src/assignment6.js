@@ -1,8 +1,4 @@
 function reqListener() {
-    if(oReq.status !== 200 || !oReq.responseText) {
-        alert("Error");
-        return;
-    }
     console.log("Unparsed: " + this.responseText);
 
     // Parse and log response body
