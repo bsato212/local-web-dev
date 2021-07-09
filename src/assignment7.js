@@ -9,9 +9,5 @@ for(let i = 0; i < 3; i++) {
             const container = document.getElementById("container");
             container.appendChild(image);
         })
-        .catch(error => {
-            if(response.ok == false) {
-                console.log(error);
-            }
-        });
+        .catch(error => console.error(error));
 }

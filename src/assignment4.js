@@ -3,7 +3,7 @@ function reqListener() {
 }
 
 // Trigger GET request
-var oReq = new XMLHttpRequest();
+const oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
 oReq.open("GET", "https://aws.random.cat/meow");
 oReq.send();
@@ -16,12 +16,12 @@ oReq.onload = function() {
     }
     const jsonbody = JSON.parse(oReq.responseText);
     console.log(jsonbody);
-    var link = jsonbody.file;
+    const link = jsonbody.file;
 
     // Create and put image on page
-    var image = document.createElement("img");
+    const image = document.createElement("img");
     image.className = "cat";
     image.src = link;
-    var p = document.getElementById("line");
+    const p = document.getElementById("line");
     p.parentNode.insertBefore(image, p.nextSibling);
 }
