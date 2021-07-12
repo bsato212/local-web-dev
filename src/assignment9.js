@@ -6,6 +6,8 @@ container.appendChild(unorderedlist);
 button.addEventListener('click', () => {
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
+            // Some sort of check to determine resolve or reject
+            // (this assignment does not have any valid checks)
             resolve(Math.random().toFixed(4));
             reject("Not random number :(");
         }, 2000)
