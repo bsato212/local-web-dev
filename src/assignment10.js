@@ -14,25 +14,37 @@ function createImage(data) {
     container.appendChild(image);
 }
 
-function promise() {
+function makePromise() {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const oReq = new XMLHttpRequest();
-            oReq.open("GET", "https://aws.random.cat/meow");
-            oReq.onload = function() {
-                if(this.status !== 200) {
-                    reject("Error");
-                } else {
+        const oReq = new XMLHttpRequest();
+        oReq.open("GET", "https://aws.random.cat/meow");
+        oReq.onload = function() {
+            if(this.status !== 200) {
+                reject("Error");
+            } else {
+                setTimeout(() => {
                     resolve(oReq.responseText);
-                }
+                }, 1000)
             }
-            oReq.send();
-        }, 2000)
+        }
+        oReq.send();
     });
 }
 
-for(let i = 0; i < 3; i++) {
-    promise()
-        .then(data => createImage(data))
-        .catch(error => console.log(error));
-}
+console.log(`${Date.now()} First promise`);
+makePromise()
+    .then(data => {
+        createImage(data);
+        console.log(`${Date.now()} Second promise`)
+        return makePromise();
+    })
+    .then(data => {
+        createImage(data);
+        console.log(`${Date.now()} Third promise`)
+        return makePromise();
+    })
+    .then(data => {
+        createImage(data);
+        console.log(`${Date.now()} Done`);
+    })
+    .catch(error => console.log(error));
